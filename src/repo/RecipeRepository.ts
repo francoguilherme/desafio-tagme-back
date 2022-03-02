@@ -9,7 +9,7 @@ export class RecipeRepository extends BaseRepository<IRecipe & Document> {
     }
 
     async findAll():Promise<any> {
-        return this._model.find();
+        return this._model.find().select({name: 1, description: 1, image: 1});
     }
 
     async findById(id: string):Promise<any> {
