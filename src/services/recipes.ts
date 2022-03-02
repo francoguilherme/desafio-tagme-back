@@ -18,4 +18,14 @@ export default class RecipeService {
             throw e;
         }
     }
+
+    public async GetRecipeById(recipeId: string): Promise<any> {
+        try {
+            let controller = this._controller;
+            let recipe = await controller.findById(recipeId);
+            return recipe;
+        } catch (e) {
+            throw e;
+        }
+    }
 }

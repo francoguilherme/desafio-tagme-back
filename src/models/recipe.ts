@@ -1,11 +1,10 @@
 import { IRecipe } from "../interfaces/IRecipe";
 import mongoose, { Schema, Document, Model } from "mongoose";
 import config from "../config";
-import affiliate from "../schemas/recipe"
-
+import recipe from "../schemas/recipe"
 
 const DataSchema = new Schema(
-    affiliate,
+    recipe,
     {
         toJSON: {
             transform: (_, ret) => {

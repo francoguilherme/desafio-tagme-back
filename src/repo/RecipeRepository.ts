@@ -11,4 +11,8 @@ export class RecipeRepository extends BaseRepository<IRecipe & Document> {
     async findAll():Promise<any> {
         return this._model.find();
     }
+
+    async findById(id: string):Promise<any> {
+        return this._model.findById(id);
+    }
 }

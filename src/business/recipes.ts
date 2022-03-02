@@ -13,4 +13,8 @@ export default class Client implements Client {
     async findAll(): Promise<IRecipe[]> {
         return await this._recipeRepository.findAll();
     }
+
+    async findById(recipeId: string): Promise<IRecipe> {
+        return await this._recipeRepository.findById(recipeId)
+    }
 }

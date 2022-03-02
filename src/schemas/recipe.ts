@@ -1,6 +1,6 @@
 var schema = {
     _id: {
-        type: "String",
+        type: "ObjectId",
     },
     name: {
         type: "String",

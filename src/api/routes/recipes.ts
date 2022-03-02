@@ -24,4 +24,16 @@ export default (app: Router) => {
             return next(e);
         }
     });
+
+    route.get("/:recipeId", async (req: Request, res: Response, next: NextFunction) => {
+        const recipeId = req.params.recipeId;
+        try {
+            const RecipeServiceInstance = Container.get(RecipeService)
+            const response = await RecipeServiceInstance.GetRecipeById(recipeId)
+            res.status(200).json(response);
+        } catch (e) {
+            console.log("🔥 Endpoint error: %o", e);
+            return next(e);
+        }
+    });
 }
