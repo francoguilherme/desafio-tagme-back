@@ -9,6 +9,7 @@ export class RecipeRepository extends BaseRepository<IRecipe & Document> {
     }
 
     async findAll():Promise<any> {
+        // Usa select para diminuir a carga de dados retornados
         return this._model.find().select({name: 1, description: 1, image: 1});
     }
 

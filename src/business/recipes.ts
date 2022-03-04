@@ -1,5 +1,3 @@
-import { Container } from 'typedi';
-import request from 'request-promise';
 import { RecipeRepository } from "../repo/RecipeRepository";
 import { IRecipe } from "../interfaces/IRecipe";
 

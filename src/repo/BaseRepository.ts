@@ -1,13 +1,9 @@
-// import all interfaces
 import { IWrite } from '../interfaces/IWrite';
 import { IRead } from '../interfaces/IRead';
 
 import mongoose from "mongoose";
 
-// that class only can be extended
 export abstract class BaseRepository<T> implements IWrite<T>, IRead<T> {
-
-
     public _model: mongoose.Model<mongoose.Document>;
 
     constructor(schemaModel: mongoose.Model<any>) {
@@ -44,5 +40,4 @@ export abstract class BaseRepository<T> implements IWrite<T>, IRead<T> {
     private toObjectId(_id: string): mongoose.Types.ObjectId {
         return mongoose.Types.ObjectId.createFromHexString(_id)
     }
-
 }
